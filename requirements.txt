@@ -1,0 +1,5 @@
+google-adk
+pyyaml
+python-dotenv
+asyncio
+requests

@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+.env_venv/
+
+# Environment Variables
+.env
+
+# Google ADK specific logs / state
+session_state/
+adk_logs/
+*.log
+
+# VS Code / IDE
+.vscode/
+.idea/
+*.swp
+*.bak
+.DS_Store
+
+# Agent local state files
+*_data.json
