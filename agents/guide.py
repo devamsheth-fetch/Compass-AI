@@ -118,8 +118,8 @@ async def handle_chat_message(ctx: Context, sender: str, msg: ChatMessage):
             ctx.logger.info(f"Session ended with {sender}")
             session_id = str(msg.session_id) if hasattr(msg, 'session_id') and msg.session_id else sender
             ctx.storage.set(session_id, {})
-            goodbye_message = create_text_chat("Goodbye! Thanks for chatting.", end_session=True)
-            await ctx.send(sender, goodbye_message)
+            # Do NOT send a reply here — replying to an EndSessionContent causes
+            # the remote agent to send another message back, creating an infinite loop.
 
 async def handle_planner_clarification(ctx: Context, user_sender: str, text: str, user_state: dict, session_id: str):
     ctx.logger.info(f"Received clarification from user: {text}")
